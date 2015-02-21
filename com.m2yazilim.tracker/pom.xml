@@ -1,0 +1,162 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.m2yazilim.tracker</groupId>
+  <artifactId>com.m2yazilim.tracker</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>com.m2yazilim.tracker</name>
+  <description>root project for teambranch</description>
+
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+		<gwt.version>2.3.0</gwt.version>
+		<gwt.maven.plugin.version>2.3.0</gwt.maven.plugin.version>
+		<com.m2yazilim.tracker.version>1.0.57-SNAPSHOT</com.m2yazilim.tracker.version>
+		<springVersion>2.5.6</springVersion>
+	    <spring.framework.version>2.5.6</spring.framework.version>
+    	<org.slf4j.version>1.5.2</org.slf4j.version>
+	</properties>
+	
+	<scm>
+		<developerConnection>scm:svn:http://vdscmuser:jf98sf48@212.65.145.218/vodafone/onlinePortal/teambranch/trunk/com.m2yazilim.tracker</developerConnection>
+		<connection>scm:svn:http://vdscmuser:jf98sf48@212.65.145.218/vodafone/onlinePortal/teambranch/trunk/com.m2yazilim.tracker</connection>
+	</scm>
+	
+	<distributionManagement>
+		<!-- use the following if you're not using a snapshot version. -->
+		<repository>
+			<id>releaseRepo</id>
+			<name>releaseRepo</name>
+			<url>file:///home/eteration/dev/nexus/sonatype-work/nexus/storage/releases/</url>
+			<!-- url>scp://212.65.145.218/nexus/content/repositories/snapshot</url -->
+		</repository>
+		<!-- use the following if you ARE using a snapshot version. -->
+		<snapshotRepository>
+			<id>snapshotRepo</id>
+			<name>snapshotRepo</name>
+			<url>file:///home/eteration/dev/nexus/sonatype-work/nexus/storage/snapshots/</url>
+			<!-- url>scp://212.65.145.218/nexus/content/repositories/releases</url -->
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<repositories>
+	    <!-- 
+		<repository>
+			<id>public</id>
+			<name>Nexus Repository for Maven</name>
+			<url>http://212.65.145.218/nexus/content/groups/public</url>
+		</repository>
+		 -->
+		 <repository>
+			<id>maven2-repository.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>repository.atlassian.com</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://repository.atlassian.com/maven2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>repo1.maven.org/maven2</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://repo1.maven.org/maven2</url>
+			<layout>default</layout>
+		</repository>
+		
+		 <repository>
+            <id>springsource-milestone</id>
+            <url>http://repository.springsource.com/maven/bundles/milestone</url>
+        </repository>
+        <repository>
+            <id>springsource-release</id>
+            <url>http://repository.springsource.com/maven/bundles/release</url>
+        </repository>
+        <repository>
+            <id>springsource-external</id>
+            <url>http://repository.springsource.com/maven/bundles/snapshot</url>
+        </repository>
+        
+	</repositories>
+	
+	<profiles>
+		<profile>
+		<!-- Used only when invoking release:perform so as not to re-run tests as part of the deployment-->
+      	<id>release</id>
+      	<properties>
+        	<skipTests>true</skipTests>
+      	</properties> 
+		</profile>
+	</profiles>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+				<excludes>
+					<exclude>**/commons-logging.properties</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/test/resources</directory>
+				<excludes>
+					<exclude>**/*.*</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/test/java</directory>
+				<excludes>
+					<exclude>**/*.*</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<tagBase>http://212.65.145.218/vodafone/onlinePortal/teambranch/tags</tagBase>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<preparationGoals>clean install -Dmaven.test.skip=true</preparationGoals>
+					<goals>deploy -P release</goals> 
+					<username>vdscmuser</username>
+					<password>jf98sf48</password>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+
+	<modules>
+
+		<module>com.m2yazilim.tracker.service</module>
+		<module>com.m2yazilim.tracker.util</module>
+		<module>com.m2yazilim.tracker.aspect</module>
+<module>com.m2yazilim.tracker.scheduler</module>
+		
+
+	</modules>
+</project>

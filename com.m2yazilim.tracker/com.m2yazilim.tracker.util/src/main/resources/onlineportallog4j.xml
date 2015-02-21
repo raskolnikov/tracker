@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+	
+	<appender name="secfile"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10000KB" />
+		<param name="maxBackupIndex" value="10" />
+		<param name="File" value="${onlinePortalLogHome}/onlineportal_securitytrace-${weblogic.Name}.log" />
+		<param name="threshold" value="debug"/>
+		<param name="bufferedIO" value="false"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"  
+				value="%d %5p security:%c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="appfile"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10000KB" />
+		<param name="maxBackupIndex" value="10" />
+		<param name="File" value="${onlinePortalLogHome}/onlineportal_apptrace-${weblogic.Name}.log" />
+		<param name="threshold" value="debug"/>
+		<param name="bufferedIO" value="false"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d %5p APPTRACE:%c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="botlogfile"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10000KB" />
+		<param name="maxBackupIndex" value="10" />
+		<param name="File" value="${onlinePortalLogHome}/onlineportal_botlogtrace-${weblogic.Name}.log" />
+		<param name="threshold" value="debug"/>
+		<param name="bufferedIO" value="false"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d %5p BOTLOGTRACE:%c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<param name="threshold" value="info"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d %5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+	
+	<logger name="com.vodafone.online.security.onlineportal">
+		<level value="ALL"/>
+		<appender-ref ref="secfile"/>
+	</logger>
+	
+	<logger name="com.vodafone.online.app.onlineportal">
+		<level value="ALL"/>
+		<appender-ref ref="appfile"/>
+	</logger>
+	
+	<logger name="com.vodafone.online.botlog">
+		<level value="ALL"/>
+		<appender-ref ref="botlogfile"/>
+	</logger>
+	
+	<root>
+		<priority value="debug"/>
+		<appender-ref ref="stdout" />
+	</root>
+	
+</log4j:configuration>

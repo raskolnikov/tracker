@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>com.m2yazilim.tracker</artifactId>
+		<groupId>com.m2yazilim.tracker</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.m2yazilim.tracker</groupId>
+	<artifactId>com.m2yazilim.tracker.aspect</artifactId>
+	<version>1.0.57-SNAPSHOT</version>
+	<name>com.m2yazilim.tracker.aspect</name>
+	<description>com.m2yazilim.tracker.aspect</description>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>			
+				<excludes>
+					<exclude>**/commons-logging.properties</exclude>
+					<exclude>**/LoggerAspect.java</exclude>								
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/test/resources</directory>
+				<excludes>
+					<exclude>**/*.*</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/test/java</directory>
+				<excludes>
+					<exclude>**/*.*</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		
+		</plugins>
+	</build>
+
+	<dependencies>
+
+	<dependency>
+		<groupId>com.m2yazilim.tracker</groupId>
+		<artifactId>com.m2yazilim.tracker.util</artifactId>
+		<version>1.0.57-SNAPSHOT</version>  
+	</dependency> 
+	
+		
+
+	</dependencies>
+</project>

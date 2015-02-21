@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:ws="http://jax-ws.dev.java.net/spring/core" xmlns:wss="http://jax-ws.dev.java.net/spring/servlet"
+	xmlns:oxm="http://www.springframework.org/schema/oxm" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+						http://www.springframework.org/schema/util 
+						http://www.springframework.org/schema/util/spring-util-2.5.xsd
+						http://www.springframework.org/schema/context
+        				http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        				http://www.springframework.org/schema/oxm 
+						http://www.springframework.org/schema/oxm/spring-oxm-2.5.xsd
+     					http://www.springframework.org/schema/aop 
+     					http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+	default-autowire="byName">
+	
+
+	<context:annotation-config />
+	
+	
+	<bean id="reloadableResourceBundleMessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="cacheSeconds" value="10" />
+		<property name="basenames">
+			<list>
+				<value>file:///C:/is_calismalarim/tracker_config/TrackerCommon</value>
+				<value>file:///C:/is_calismalarim/tracker_config/TrackerCommon</value>
+				<value>file:///usr/local/shared/tomcat/mustafacalik/tracker_config/TrackerCommon</value>
+				<value>file:///Users/koza/Documents/is_calismalarim/tracker_config/TrackerCommon</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 	
+	<bean id="reloadableStaticMessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="cacheSeconds" value="1000" />
+		<property name="basenames">
+			<list>
+				<value>file:///home/eteration/dev/vodafone/comtr/properties/VodafoneOnlineStaticConstants</value>
+				<value>file:///C:/eteration_calismasi/VodafoneOnlineStaticConstants</value>				
+				<value>file:///home/weblogic/properties/VodafoneOnlineStaticConstants</value>
+				<value>file:///home/eteration/dev/properties/VodafoneOnlineStaticConstants</value>		
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id="reloadableOptionSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="cacheSeconds" value="10000" />
+		<property name="basenames">
+			<list>
+				<value>file:///home/weblogic/properties/OptionList</value>
+				<value>file:///home/eteration/dev/vodafone/comtr/properties/OptionList</value>
+				<value>file:///home/eteration/dev/properties/OptionList</value>
+				<value>file:///C:/eteration_calismasi/OptionList</value>
+			</list>
+		</property>
+		<property name="fileEncodings" value="UTF-8" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+	 -->
+
+	<bean id="loggerAspect" class="com.m2yazilim.tracker.aspect.LoggerAspect" factory-method="aspectOf">
+		<property name="loggerName">
+			<ref bean="loggerName" />
+		</property>
+	</bean>
+	
+	
+	<bean name="applicationContext" class="com.m2yazilim.tracker.util.ApplicationContextProvider"></bean>
+	
+
+	
+</beans>

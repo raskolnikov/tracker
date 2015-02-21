@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="com.m2yazilim.tracker.service">
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_src"/>
+        <dependent-module archiveName="com.m2yazilim.tracker.util-1.0.57-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/com.m2yazilim.tracker.util/com.m2yazilim.tracker.util">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="com.m2yazilim.tracker.aspect-1.0.57-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/com.m2yazilim.tracker.aspect/com.m2yazilim.tracker.aspect">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path"/>
+        <property name="context-root" value="com.m2yazilim.tracker.service"/>
+    </wb-module>
+</project-modules>

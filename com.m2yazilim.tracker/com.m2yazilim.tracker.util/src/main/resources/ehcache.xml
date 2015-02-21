@@ -1,0 +1,315 @@
+<ehcache>
+
+  <!--
+    Sets the path to the directory where cache files are created.
+
+    If the path is a Java System Property it is replaced by its value in the
+    running VM.
+
+    The following properties are translated:
+    * user.home - User's home directory
+    * user.dir - User's current working directory
+    * java.io.tmpdir - Default temp file path
+
+    Subdirectories can be specified below the property e.g. java.io.tmpdir/one
+    -->
+    <diskStore path="java.io.tmpdir"/>
+
+ <!--
+    Mandatory Default Cache configuration. These settings will be applied to caches
+    created programmtically using CacheManager.add(String cacheName)
+    -->
+    <defaultCache
+            maxElementsInMemory="1000"
+            eternal="false"
+            timeToIdleSeconds="300"
+            timeToLiveSeconds="300"
+            overflowToDisk="false"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="300"
+            />
+
+
+<!-- The unnamed query cache -->
+<cache
+    name="org.hibernate.cache.StandardQueryCache"
+    maxElementsInMemory="1000"
+    eternal="false"
+    timeToLiveSeconds="300"
+    overflowToDisk="false"
+/>
+    
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerAdminRequests"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerAssigned"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerAssignedOld"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerAttachments"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerCache"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerCity"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerComments"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerDependencies"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerGroups"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerHistory"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerListCategory"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerListOs"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerListResolution"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerListStatus"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerListTasktype"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerListVersion"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerLocationGetType"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerNotificationMessages"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerNotificationRecipients"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerNotifications"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerPrefs"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerProjects"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerRegistrations"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerRelated"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerReminders"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerSearches"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerTableChangeLog"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerTasks"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerUserLocationLog"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerUserMobileSetting"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerUserSession"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerUsers"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerUsersInGroups"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+<cache
+    name="com.m2yazilim.tracker.dataaccess.model.obj.tracker.TrackerVotes"
+    maxElementsInMemory="5000"
+    eternal="false"
+    timeToIdleSeconds="300"
+    timeToLiveSeconds="600"
+    overflowToDisk="false"
+/>
+
+</ehcache>

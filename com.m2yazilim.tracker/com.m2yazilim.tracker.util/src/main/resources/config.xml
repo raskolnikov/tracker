@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<appconfig>
+	<dbType>MYSQL</dbType>
+	<driver>com.mysql.jdbc.Driver</driver>
+      	<jdbcConnectionString>jdbc:mysql://localhost:3306/tracker</jdbcConnectionString>
+	<databaseIP>localhost</databaseIP>
+	<databaseUsername>root</databaseUsername>
+	<databasePassword></databasePassword>
+	<sourceTarget>J:/IsCalismalarim/Workspaces/myvodafone_genesis/com.m2yazilim.tracker/com.m2yazilim.tracker.util</sourceTarget>
+	<projectName>dataaccess</projectName>
+	<topLevel>com.m2yazilim.tracker</topLevel>
+	<libPath>libs</libPath>
+	<schemaStrategy>PARTIAL</schemaStrategy>
+	
+	<maven enabled="true" enablePomGeneration="false" artifactId="com.m2yazilim.tracker" groupId="com.m2yazilim.tracker" version="1.3" name="Some friendly name" noArtifactVersions="false" noDeps="false" useExternalLib="false">
+
+	<!--  Anything else you'd like to add to your pom (eg parent tags) -->
+	<additionalPomEntries>
+			<![CDATA[ ]]>
+	</additionalPomEntries>
+					
+	<!-- Anything in this section is copied verbatim to the resultant 
+	dependencies list -->
+		<dependencies><![CDATA[
+		<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate</artifactId>
+	<version>3.2.6.ga</version>
+</dependency>]]>
+		</dependencies>
+		
+		<!-- Distribution Management section is also copied in the config -->
+		<distributionManagement>
+				<![CDATA[
+						<repository>
+							<id>someid</id>
+							<name>somename</name>
+							<url>http://some.url.here/archiva/repository/</url>
+						</repository>
+				]]>
+		</distributionManagement>
+	</maven>
+
+</appconfig>
